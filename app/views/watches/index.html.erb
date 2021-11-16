@@ -5,3 +5,6 @@
     <%= watch.location %>
   <%end%>
 </h1>
+<% if policy(Watch).create? %>
+  <%= link_to "New watch", new_watch_path %>
+<% end %>

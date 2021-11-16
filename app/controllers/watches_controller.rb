@@ -1,15 +1,16 @@
 class WatchesController < ApplicationController
-  # authorize @watch
+  before_action :set_watch, only: [:create, :show, :edit, :update, :destroy]
+
   def index
     @watches = policy_scope(Watch).order(created_at: :desc)
   end
 
   def show
-    set_watch
   end
 
   def new
     @watch = Watch.new
+    authorize(@watch)
   end
 
   def create
@@ -23,7 +24,6 @@ class WatchesController < ApplicationController
   end
 
   def edit
-    set_watch
   end
 
   def update
@@ -35,7 +35,6 @@ class WatchesController < ApplicationController
   end
 
   def destroy
-    set_watch
   end
 
   def my_watches
@@ -47,6 +46,7 @@ class WatchesController < ApplicationController
 
   def set_watch
     @watch = Watch.find(params[:id])
+    authorize(@watch)
   end
 
   def watch_params
