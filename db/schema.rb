@@ -10,21 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_16_164805) do
+ActiveRecord::Schema.define(version: 2021_11_16_191959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "users_id", null: false
-    t.bigint "watches_id", null: false
     t.date "start_date"
     t.date "end_date"
     t.boolean "accepted", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_bookings_on_users_id"
-    t.index ["watches_id"], name: "index_bookings_on_watches_id"
+    t.integer "user_id"
+    t.integer "watch_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -49,7 +47,6 @@ ActiveRecord::Schema.define(version: 2021_11_16_164805) do
   end
 
   create_table "watches", force: :cascade do |t|
-    t.bigint "users_id", null: false
     t.string "name"
     t.string "style"
     t.string "location"
@@ -58,11 +55,8 @@ ActiveRecord::Schema.define(version: 2021_11_16_164805) do
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_watches_on_users_id"
+    t.integer "user_id"
   end
 
-  add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "bookings", "watches", column: "watches_id"
   add_foreign_key "reviews", "bookings", column: "bookings_id"
-  add_foreign_key "watches", "users", column: "users_id"
 end
