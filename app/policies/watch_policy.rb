@@ -20,4 +20,8 @@ class WatchPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def owner?
+    record.user == user
+  end
 end
