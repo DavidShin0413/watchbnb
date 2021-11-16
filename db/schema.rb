@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_16_191959) do
+ActiveRecord::Schema.define(version: 2021_11_16_201420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 2021_11_16_191959) do
     t.boolean "accepted", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
-    t.integer "watch_id"
+    t.bigint "user_id", null: false
+    t.bigint "watch_id", null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["watch_id"], name: "index_bookings_on_watch_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -55,8 +57,12 @@ ActiveRecord::Schema.define(version: 2021_11_16_191959) do
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_watches_on_user_id"
   end
 
+  add_foreign_key "bookings", "users"
+  add_foreign_key "bookings", "watches"
   add_foreign_key "reviews", "bookings", column: "bookings_id"
+  add_foreign_key "watches", "users"
 end
