@@ -1,4 +1,6 @@
 class Booking < ApplicationRecord
-  belongs_to :users
-  belongs_to :watches
+  belongs_to :user
+  belongs_to :watch
+
+  validates :start_date, :end_date, presence: true
 end
