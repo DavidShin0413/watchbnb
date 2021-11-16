@@ -17,12 +17,20 @@ class BookingsController < ApplicationController
   end
 
   def my_watches_bookings
-
+    watches = Watch.all.where(record.user == user)
+    @watches = watches.map do |watch|
+      watch.user_id == record.user
+    end
   end
 
   def confirm_booking
-
+    if @watch.update(watch_params)
+      redirect_to confirm_booking_path(@watch), notice: ''
+      # else
+      #   render :edit
+    end
   end
+
   private
 
   def booking_params
