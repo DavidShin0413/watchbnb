@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   resources :bookings do
     resources :reviews, only: [:new, :create]
   end
+
+  get "/my_bookings", to: "bookings#my_bookings"
+  get "/my_watches_bookings", to: "bookings#my_watches_bookings"
+  patch "/confirm_booking/:id", to: "bookings#confirm_booking"
 end
