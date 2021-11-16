@@ -1,9 +1,11 @@
 <h1>
-  <%@watches.each do |watch|%>
-    <%= watch.name %>
-    <%= watch.style %>
-    <%= watch.location %>
-  <%end%>
+  <% @watches.each do |watch| %>
+    <ul>
+      <li> <%= watch.name %> </li>
+      <li> <%= watch.style %> </li>
+      <li> <%= watch.location %> </li>
+    </ul>
+  <% end %>
 </h1>
 <% if policy(Watch).create? %>
   <%= link_to "New watch", new_watch_path %>

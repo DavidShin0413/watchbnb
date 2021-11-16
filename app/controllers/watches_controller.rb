@@ -1,5 +1,5 @@
 class WatchesController < ApplicationController
-  before_action :set_watch, only: [:create, :show, :edit, :update, :destroy]
+  before_action :set_watch, only: [:show, :edit, :update, :destroy]
 
   def index
     @watches = policy_scope(Watch).order(created_at: :desc)
@@ -15,9 +15,11 @@ class WatchesController < ApplicationController
 
   def create
     @watch = Watch.new(watch_params)
+    @watch.user = current_user
+    authorize(@watch)
 
     if @watch.save
-      redirect_to @watch, notice: 'Watch was successfully created.'
+      redirect_to watch_path(@watch), notice: 'Watch was successfully created.'
     else
       render :new
     end
@@ -50,6 +52,6 @@ class WatchesController < ApplicationController
   end
 
   def watch_params
-    params.require(:watches).permit(:id, :name, :style, :location, :price, :booked, :img_url)
+    params.require(:watch).permit(:id, :name, :style, :location, :price, :img_url)
   end
 end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p> Name: <%= @watch.name %> </p>
+<p> User: <%= @watch.user_id %> </p>
+<p> style: <%= @watch.style %> </p>
+<p> location: <%= @watch.location %> </p>
+<p> price: <%= @watch.price %> </p>
+<img href="<% @watch.img_url %>"/>
+
+<% if policy(@watch).edit? %>
+<p><%= link_to 'Edit', edit_watch_path(@watch) %></p>
+<% end %>
+
+<% unless policy(@watch).owner? %>
+  <%# don't forget to update watches_path %>
+  <p><%= link_to 'Borrow this watch', watches_path %></p>
+<% end %>
+
+<p><%= link_to 'Back', watches_path %></p>
