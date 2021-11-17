@@ -13,7 +13,8 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    @my_bookings = Booking.all.where(record.user == user)
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+    authorize(@bookings)
   end
 
   def my_watches_bookings

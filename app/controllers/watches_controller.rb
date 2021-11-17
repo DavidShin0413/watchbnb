@@ -37,11 +37,8 @@ class WatchesController < ApplicationController
   end
 
   def destroy
-  end
-
-  def my_watches
-    index
-    @my_watches = @watches.where(record.user == user)
+    @watch.destroy
+    redirect_to watches_path
   end
 
   private
