@@ -21,7 +21,6 @@ class BookingsController < ApplicationController
   def my_watches_bookings
     @watches = Watch.where(user: current_user)
     @my_watches_bookings = @watches.map { |watch| (watch.bookings).to_a }.flatten
-    # raise
     authorize(@my_watches_bookings)
   end
 
