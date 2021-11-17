@@ -1,9 +1,9 @@
-<%= @watches.each do |watch| %>
+<% @watches.each do |watch| %>
 <div class="cards">
   <img src=<%= watch.img_url %>/>
   <div class="card-trip-infos">
     <div>
-      <h2><%= watch.name %></h2>
+      <h2><%= link_to watch.name, watch_path(watch) %></h2>
       <p><%= watch.style %></p>
       <p><%= watch.location %></p>
     </div>
