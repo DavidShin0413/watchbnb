@@ -16,4 +16,8 @@
   <p><%= link_to 'Borrow this watch', watches_path %></p>
 <% end %>
 
+<% if policy(@watch).destroy? %>
+  <p><%= link_to 'Delete', watch_path(@watch), method: :delete %></p>
+<% end %>
+
 <p><%= link_to 'Back', watches_path %></p>
