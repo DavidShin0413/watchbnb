@@ -1,0 +1,11 @@
+<h1>List new watch</h1>
+
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+
+  <%= f.submit %>
+<% end %>
