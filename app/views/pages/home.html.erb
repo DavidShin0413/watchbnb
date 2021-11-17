@@ -1,5 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.gq.com/photos/5e8c9a7cc21b8b00087a00f1/master/pass/watches-fix.jpg);">
+  <div class="container">
+    <h1>WatchBnB</h1>
+    <p>Can't afford to buy a Rolex? Then RENT one!</p>
+    <div class="button-container">
+      <%= link_to "Rent Now", watches_path, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
 
 <%= link_to "All listings", watches_path %>
 
