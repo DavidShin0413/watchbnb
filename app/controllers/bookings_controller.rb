@@ -1,13 +1,18 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @watch = Watch.find(params[:watch_id])
     authorize(@booking)
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @watch = Watch.find(params[:watch_id])
+    @booking.watch = @watch
+    authorize(@booking)
     if @booking.save
-      redirect_to @booking, notice: 'Booking was successfully created.'
+      redirect_to my_bookings_path, notice: 'Booking was successfully created.'
     else
       render :new
     end
@@ -36,6 +41,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:bookings).permit(:id, :watch_id, :user_id, :start_date, :end_date, :accepted)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
