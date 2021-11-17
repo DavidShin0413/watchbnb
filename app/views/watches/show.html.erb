@@ -13,7 +13,7 @@
 
 <% unless policy(@watch).owner? %>
   <%# don't forget to update watches_path %>
-  <p><%= link_to 'Borrow this watch', watches_path %></p>
+  <p><%= link_to 'Borrow this watch', new_watch_booking_path(@watch) %></p>
 <% end %>
 
 <% if policy(@watch).destroy? %>
