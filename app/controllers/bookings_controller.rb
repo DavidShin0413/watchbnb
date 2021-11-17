@@ -19,10 +19,10 @@ class BookingsController < ApplicationController
   end
 
   def my_watches_bookings
-    watches = Watch.all.where(record.user == user)
-    @watches = watches.map do |watch|
-      watch.user_id == record.user
-    end
+    @watches = Watch.where(user: current_user)
+    @my_watches_bookings = @watches.map { |watch| (watch.bookings).to_a }.flatten
+    # raise
+    authorize(@my_watches_bookings)
   end
 
   def confirm_booking

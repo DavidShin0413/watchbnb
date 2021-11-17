@@ -12,4 +12,8 @@ class BookingPolicy < ApplicationPolicy
   def my_bookings?
     true
   end
+
+  def my_watches_bookings?
+    true
+  end
 end
