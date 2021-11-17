@@ -1,9 +1,12 @@
 <h1>
   <% @watches.each do |watch| %>
     <ul>
-      <li> <%= watch.name %> </li>
-      <li> <%= watch.style %> </li>
-      <li> <%= watch.location %> </li>
+      <img src="<%= watch.img_url %>">
+      <li> User: <%= watch.user_id %> </li>
+      <li> Name: <%= watch.name %> </li>
+      <li> Style: <%= watch.style %> </li>
+      <li> Location: <%= watch.location %> </li>
+      <li> Price: $<%= watch.price %> </li>
     </ul>
   <% end %>
 </h1>
