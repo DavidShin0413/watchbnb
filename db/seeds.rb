@@ -22,8 +22,8 @@ puts "Creating watches..."
 rolex = Watch.create(user_id: alex.id, name: "Rolex", style: "diver", location: "Montreal", price: 10, img_url: "https://gothelist.com/media/catalog/product/cache/image/e9c3970ab036de70892d86c6d221abfe/imp/ort/content-media-product-sources-8f021a2f-f8e0-6eba-c794-b0cb3430a98a.jpg")
 omega = Watch.create(user_id: alex.id, name: "Omega", style: "diver", location: "Montreal", price: 8, img_url: "https://www.watchshopping.com/media/catalog/product/image/2/1/210.30.42.20.03.001_1575420399.jpg")
 casio = Watch.create(user_id: bob.id, name: "Casio", style: "field", location: "toronto", price: 1, img_url: "https://m.media-amazon.com/images/I/71I0ZSLa16S._AC_UY550_.jpg")
-longines = Watch.create(user_id: bob.id, name: "Longines", style: "dress", location: "Montreal", price: 6, img_url: "https://www.maisonbirks.com/media/catalog/product/cache/147e25bc7524a84e0e40827741fa0a2e/p/r/product_resize_watch_with_guides_0117_l2.673.4.78.3.jpg")
-iwc = Watch.create(user_id: charlie.id, name: "IWC", style: "pilot", location: "Montreal", price: 7, img_url: "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/i/w/iwc-mark-xviii-edition-_le-petit-prince_-blue-dial-automatic-men_s-watch-iw327016.jpg")
+longines = Watch.create(user_id: bob.id, name: "Longines", style: "dress", location: "Montreal", price: 6, img_url: "https://m.media-amazon.com/images/I/71Phyy-IiFL._AC_UX425_.jpg")
+iwc = Watch.create(user_id: charlie.id, name: "IWC", style: "pilot", location: "Montreal", price: 7, img_url: "https://gothelist.com/media/catalog/product/cache/image/e9c3970ab036de70892d86c6d221abfe/imp/ort/content-media-product-sources-8db432eb-cddf-f5e3-d5dd-dcaecdf1cab5.jpg")
 ap = Watch.create(user_id: daniel.id, name: "Audemars Piguet", style: "dress", location: "Montreal", price: 100, img_url: "https://gothelist.com/media/catalog/product/cache/image/e9c3970ab036de70892d86c6d221abfe/imp/ort/content-media-product-sources-bbe5a499-949d-42d8-86e2-155bfe039737.jpg")
 
 # rolex.user = alex
