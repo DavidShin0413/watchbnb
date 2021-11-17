@@ -1,15 +1,13 @@
-<h1>
-  <% @watches.each do |watch| %>
-    <ul>
-      <img src="<%= watch.img_url %>">
-      <li> User: <%= watch.user_id %> </li>
-      <li> Name: <%= watch.name %> </li>
-      <li> Style: <%= watch.style %> </li>
-      <li> Location: <%= watch.location %> </li>
-      <li> Price: $<%= watch.price %> </li>
-    </ul>
-  <% end %>
-</h1>
-<% if policy(Watch).create? %>
-  <%= link_to "New watch", new_watch_path %>
+<%= @watches.each do |watch| %>
+<div class="cards">
+  <img src=<%= watch.img_url %>/>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= watch.name %></h2>
+      <p><%= watch.style %></p>
+      <p><%= watch.location %></p>
+    </div>
+    <h2 class="card-trip-pricing">$<%= watch.price %>/day</h2>
+  </div>
+</div>
 <% end %>
