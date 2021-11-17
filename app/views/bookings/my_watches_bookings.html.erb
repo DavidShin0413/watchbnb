@@ -1,0 +1,11 @@
+
+<ul>
+  <% @my_watches_bookings.each do |booking|%>
+    <li><%=booking.watch.name%>
+        <br>
+        <%=booking.start_date%>
+        <br>
+        <%=booking.end_date%>
+    </li>
+  <% end %>
+</ul>
