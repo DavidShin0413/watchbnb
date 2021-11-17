@@ -1,11 +1,12 @@
-
-<ul>
-  <% @my_watches_bookings.each do |booking|%>
-    <li><%=booking.watch.name%>
-        <br>
-        <%=booking.start_date%>
-        <br>
-        <%=booking.end_date%>
-    </li>
-  <% end %>
-</ul>
+<h1>My watches that are booked</h1>
+<% @my_watches_bookings_booked.each do |booking|%>
+  <ul>
+    <li><img src="<%= booking.watch.img_url %>"/></li>
+    <li>Watch name: <%=booking.watch.name%></li>
+    <li>User ID: <%=booking.watch.user_id%></li>
+    <li>Watch style: <%=booking.watch.style%></li>
+    <li>Location: <%=booking.watch.location%></li>
+    <li>Price: <%=booking.watch.price%></li>
+    <li>Accepted? <%=booking.accepted%></li>
+  </ul>
+<% end %>
