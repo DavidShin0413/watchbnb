@@ -2,7 +2,11 @@ class WatchesController < ApplicationController
   before_action :set_watch, only: [:show, :edit, :update, :destroy]
 
   def index
-    @watches = policy_scope(Watch).order(created_at: :desc)
+    if params[:query].present?
+      @watches = policy_scope(Watch).search_by_name_and_style(params[:query])
+    else
+      @watches = policy_scope(Watch).order(created_at: :desc)
+    end
   end
 
   def show
@@ -40,6 +44,11 @@ class WatchesController < ApplicationController
   def destroy
     @watch.destroy
     redirect_to watches_path
+  end
+
+  def my_watches
+    @my_watches = Watch.where(user: current_user)
+    authorize(@my_watches)
   end
 
   private

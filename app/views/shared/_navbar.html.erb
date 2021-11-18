@@ -8,17 +8,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="nav-item searchbar">
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-        <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Search
-        </button>
-      </div>
-    <% end %>
-  </div>
-
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -31,6 +20,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My Bookings", my_bookings_path, class: "dropdown-item" %>
             <%= link_to "My Watches", my_watches_bookings_path, class: "dropdown-item" %>
+            <%= link_to "My Watches_real", my_watches_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

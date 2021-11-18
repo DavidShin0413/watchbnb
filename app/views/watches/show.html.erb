@@ -11,7 +11,16 @@
 <p> Style: <%= @watch.style %> </p>
 <p> Location: <%= @watch.location %> </p>
 <p> Price per day: $<%= @watch.price %> </p>
-<img href="<% @watch.img_url %>"/>
+<%# <img href="<% @watch.img_url"/> %>
+<p> Reviews:
+  <ul><% @watch.reviews.each do |review| %>
+    <li>
+      comment: <%= review.comment%>
+      rating: <%= review.rating%>
+    </li>
+    <%end%>
+  </ul>
+</p>
 
 <% if policy(@watch).edit? %>
 <p><%= link_to 'Edit', edit_watch_path(@watch) %></p>

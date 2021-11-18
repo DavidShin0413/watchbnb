@@ -25,7 +25,14 @@ gem 'devise'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'pundit'
+<<<<<<< HEAD
 gem 'geocoder'
+=======
+
+# pg_search gem. github.com/Casecommons/pg_search
+gem 'pg_search', '~> 2.3.0'
+
+>>>>>>> 8621f4dc0e66bc84bb883b5a27009f82d32024a2
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

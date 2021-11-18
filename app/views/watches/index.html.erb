@@ -1,3 +1,17 @@
+<div style="margin: 16px 32px 16px 32px;">
+    <%= form_tag watches_path, method: :get do %>
+      <div style="display: flex;">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a watch"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </div>
+  <% end %>
+</div>
+
+
 <% @watches.each do |watch| %>
 <div class="cards">
   <img src="<%= watch.img_url %>">
