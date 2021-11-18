@@ -39,9 +39,9 @@ class BookingsController < ApplicationController
       end
     end
     combined_bookings = @my_watches_bookings_booked + @my_watches_bookings_pending
-    combined_watches = combined_bookings.map { |booking| booking.watch}
+    combined_watches = combined_bookings.map { |booking| booking.watch }
     @remaining_watches = []
-    watches.each {|watch| @remaining_watches << watch unless combined_watches.include?(watch)}
+    watches.each { |watch| @remaining_watches << watch unless combined_watches.include?(watch) }
   end
 
   def confirm_booking

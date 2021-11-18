@@ -1,37 +1,39 @@
-<h1>My watches that are booked and accepted</h1>
+<h1>My accepted bookings</h1>
 <% @my_watches_bookings_booked.each do |booking|%>
-  <% raise %>
   <ul>
     <li><img src="<%= booking.watch.img_url %>"/></li>
     <li>Watch name: <%=booking.watch.name%></li>
-    <li>Booked by: <%=booking.watch.user_id%></li>
+    <li>Booked by: <%=booking.watch.user.name%></li>
     <li>Watch style: <%=booking.watch.style%></li>
     <li>Location: <%=booking.watch.location%></li>
-    <li>Price: $<%=booking.watch.price%></li>
-    <li>Accepted? <%=booking.accepted%></li>
-    <li>Start date: <%=booking.start_date%></li>
-    <li>End date: <%=booking.end_date%></li>
+    <li>Price per day: $<%=booking.watch.price%></li>
+    <li>Booked: <%=booking.start_date%> to <%=booking.end_date%></li>
   </ul>
 <% end %>
 
-<h1>My watches that have a booking request that I did not yet approve</h1>
+<h1>My pending bookings</h1>
 <% @my_watches_bookings_pending.each do |booking|%>
   <ul>
     <li><img src="<%= booking.watch.img_url %>"/></li>
     <li>Watch name: <%=booking.watch.name%></li>
-    <li>User ID: <%=booking.watch.user_id%></li>
+    <li>Booked by: <%=booking.watch.user.name%></li>
     <li>Watch style: <%=booking.watch.style%></li>
     <li>Location: <%=booking.watch.location%></li>
-    <li>Price: <%=booking.watch.price%></li>
-    <li>Accepted? <%=booking.accepted%></li>
-    <li>Start date: <%=booking.start_date%></li>
-    <li>End date: <%=booking.end_date%></li>
+    <li>Price per day: $<%=booking.watch.price%></li>
+    <li>Booked: <%=booking.start_date%> to <%=booking.end_date%></li>
+    <%= link_to 'Confirm', my_watches_bookings_path %>
+    <%= link_to 'Reject', my_watches_bookings_path %>
   </ul>
 <% end %>
 
-<h1>My watches that have no booking requests</h1>
+<h1>My vacant listings</h1>
 <% @remaining_watches.each do |watch|%>
   <ul>
+    <li><img src="<%= watch.img_url %>"/></li>
     <li>Watch name: <%=watch.name%></li>
+    <li>Booked by: <%=watch.user.name%></li>
+    <li>Watch style: <%=watch.style%></li>
+    <li>Location: <%=watch.location%></li>
+    <li>Price per day: $<%=watch.price%></li>
   </ul>
 <% end %>

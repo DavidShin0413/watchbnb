@@ -3,11 +3,10 @@
   <ul>
     <li><img src="<%= booking.watch.img_url %>"/></li>
     <li>Watch name: <%=booking.watch.name%></li>
-    <li>User ID: <%=booking.watch.user_id%></li>
+    <li>Booked by: <%=booking.watch.user.name%></li>
     <li>Watch style: <%=booking.watch.style%></li>
     <li>Location: <%=booking.watch.location%></li>
-    <li>Price: <%=booking.watch.price%></li>
-    <li>Start date: <%=booking.start_date%></li>
-    <li>End date: <%=booking.end_date%></li>
+    <li>Price per day: $<%=booking.watch.price%></li>
+    <li>Booked: <%=booking.start_date%> to <%=booking.end_date%></li>
   </ul>
 <% end %>
