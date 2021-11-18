@@ -29,7 +29,6 @@ ap = Watch.create(user_id: daniel.id, name: "Audemars Piguet", style: "dress", l
 puts "Creating bookings 123..."
 
 booking1 = Booking.create(user_id: ethan.id, watch_id: rolex.id, start_date: Date.current, end_date: (Date.current + 1), accepted: true)
-booking2 = Booking.create(user_id: ethan.id, watch_id: omega.id, start_date: (Date.current + 2), end_date: (Date.current + 3), accepted: false)
-booking3 = Booking.create(user_id: ethan.id, watch_id: longines.id, start_date: (Date.current + 4), end_date: (Date.current + 5), accepted: false)
+booking2 = Booking.create(user_id: ethan.id, watch_id: omega.id, start_date: Date.current, end_date: (Date.current + 1), accepted: false)
 
 puts "Done seeding!"
