@@ -1,10 +1,18 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.gq.com/photos/5e8c9a7cc21b8b00087a00f1/master/pass/watches-fix.jpg);">
-  <div class="container">
-    <h1>WatchBnB</h1>
-    <p>Can't afford to buy a Rolex? Then RENT one!</p>
-    <div class="button-container">
-      <%= link_to "Rent Now", watches_path, class: "btn btn-danger" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://media.gq.com/photos/5e8c9a7cc21b8b00087a00f1/master/pass/watches-fix.jpg);">
+  <h1 style="margin-bottom: 32px; font-family: cursive; font-size: 80px;">WatchBnB</h1>
+  <div class="container" style="display: flex; justify-content: space-between">
+    <div style="margin-right: 100px;">
+      <p style="font-weight: bold;">Can't afford to buy a Rolex? Then RENT one!</p>
+      <div class="button-container">
+        <%= link_to "Rent Now", watches_path, class: "btn btn-danger" %>
+      </div>
+    </div>
+    <div>
+      <p style="font-weight: bold; text-shadow: 20px;">Got watches and want money? Then List your watch!</p>
+      <div class="button-container">
+        <%= link_to "List Your Watch", new_watch_path, class: "btn btn-success" %>
+      </div>
     </div>
   </div>
 </div>
