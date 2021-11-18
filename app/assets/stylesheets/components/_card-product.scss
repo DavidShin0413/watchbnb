@@ -1,21 +1,28 @@
-*{
-  outline: 1px solid black;
-}
-
 .card-container{
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  background-color: $main3;
 }
 
-.price {
+.btn{
+  outline: rgba(0, 0, 0, 0.5) 1px solid;
+}
+
+#review{
+  opacity: 1;
+}
+
+#price {
   position:absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 15px;
-  color: black;
-  background-color: $main1;
+  top: 15px;
+  right: 15px;
+  color: white;
+  font-size: 1.0rem;
+  font-weight: bold;
+  margin: 0;
+  background-color: gray;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .card-product {
@@ -25,15 +32,18 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 400px;
+  width: 420px;
   display: flex;
   margin: 10px 10px;
+  outline: rgba(0, 0, 0, 0.5) 1px solid;
+  border-radius: 5px;
 }
 
 .card-product img {
   height: 90%;
   width: 120px;
   object-fit: cover;
+  margin: 0 5px;
 }
 
 .card-product h2 {
