@@ -30,7 +30,9 @@ import "bootstrap";
 
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initFlatpickr();
 })
