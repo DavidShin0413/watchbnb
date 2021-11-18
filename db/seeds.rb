@@ -17,10 +17,17 @@ iwc = Watch.create(user_id: charlie.id, name: "IWC", style: "Pilot", location: "
 ap = Watch.create(user_id: charlie.id, name: "Audemars Piguet", style: "Dress", location: "New York", price: 100, img_url: "https://gothelist.com/media/catalog/product/cache/image/e9c3970ab036de70892d86c6d221abfe/imp/ort/content-media-product-sources-bbe5a499-949d-42d8-86e2-155bfe039737.jpg")
 
 puts "Creating bookings..."
-booking1 = Booking.create(user_id: bob.id, watch_id: rolex.id, start_date: Date.current, end_date: (Date.current + 1), status: 0)
-booking2 = Booking.create(user_id: bob.id, watch_id: omega.id, start_date: Date.current, end_date: (Date.current + 1), status: 0)
-booking3 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: Date.current, end_date: (Date.current + 1), status: 0)
-booking4 = Booking.create(user_id: alex.id, watch_id: iwc.id, start_date: Date.current, end_date: (Date.current + 1), status: 0)
-booking5 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: Date.current, end_date: (Date.current + 1), status: 1)
+booking1 = Booking.create(user_id: bob.id, watch_id: rolex.id, start_date: (Date.current + 1), end_date: (Date.current + 2), status: 0)
+booking2 = Booking.create(user_id: bob.id, watch_id: omega.id, start_date: (Date.current + 3), end_date: (Date.current + 4), status: 0)
+booking3 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: (Date.current + 5), end_date: (Date.current + 6), status: 0)
+booking4 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: (Date.current + 7), end_date: (Date.current + 8), status: 0)
+booking5 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: (Date.current + 9), end_date: (Date.current + 10), status: 0)
+booking6 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: (Date.current + 11), end_date: (Date.current + 12), status: 0)
+booking7 = Booking.create(user_id: alex.id, watch_id: iwc.id, start_date: (Date.current + 13), end_date: (Date.current + 14), status: 0)
+booking8 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 15), end_date: (Date.current + 16), status: 1)
+booking9 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 17), end_date: (Date.current + 18), status: 1)
+booking10 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 19), end_date: (Date.current + 20), status: 1)
+booking11 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 21), end_date: (Date.current + 22), status: 1)
+booking12 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 23), end_date: (Date.current + 24), status: 1)
 
 puts "Done seeding!"
