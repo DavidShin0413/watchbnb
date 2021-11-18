@@ -3,5 +3,5 @@ class Watch < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   validates :name, :price, :location, :img_url, presence: true
-  validates :style, inclusion: { in: %w[dress diver pilot field] }
+  validates :style, inclusion: { in: %w[Dress Diver Pilot Field] }
 end
