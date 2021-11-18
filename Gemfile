@@ -26,6 +26,8 @@ gem 'devise'
 # gem 'image_processing', '~> 1.2'
 gem 'pundit'
 
+gem 'geocoder'
+
 # pg_search gem. github.com/Casecommons/pg_search
 gem 'pg_search', '~> 2.3.0'
 

@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<div>
-  <img src="<%= @watch.img_url %>">
-</div>
+<div class="d-flex flex-column align-items-center">
+  <div>
+    <img src="<%= @watch.img_url %>" width=400>
+  </div>
+
 
 <p> Name: <%= @watch.name %> </p>
 <p> Owner: <%= @watch.user.name %> </p>
@@ -34,3 +36,10 @@
 <% end %>
 
 <p><%= link_to 'Back', watches_path %></p>
+</div>
+
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-marker="<%= @marker.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>

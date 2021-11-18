@@ -10,6 +10,7 @@ class WatchesController < ApplicationController
   end
 
   def show
+    @marker = { lat: @watch.latitude, lng: @watch.longitude }
   end
 
   def new
