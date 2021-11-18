@@ -1,18 +1,21 @@
 
 <h1>My accepted bookings</h1>
-<% @bookings_accepted.each do |booking| %>
-<div class="card-product" style="margin-bottom: 8px;">
-  <img src="<%= booking.watch.img_url %>" />
-  <div class="card-product-infos" style="padding-top: 32px;">
-    <h2><%= booking.watch.name %></h2>
-    <p>Booked by: <%= booking.watch.user.name %></p>
-    <p>Watch style: <%= booking.watch.style %></p>
-    <p>Location: <%= booking.watch.location %></p>
-    <p>Price per day: $<%= booking.watch.price %></p>
-    <p>Booked: <%= booking.start_date %> to <%= booking.end_date %></p>
+<div class="card-container">
+  <% @bookings_accepted.each do |booking| %>
+  <div class="card-product">
+    <img src="<%= booking.watch.img_url %>" />
+    <div class="card-product-infos">
+      <h2><%= booking.watch.name %></h2>
+      <p>Belongs to: <%= booking.watch.user.name %></p>
+      <p>Watch style: <%= booking.watch.style %></p>
+      <p>Location: <%= booking.watch.location %></p>
+      <p>Price per day: $<%= booking.watch.price %></p>
+      <p>Booked: <%= booking.start_date %> to <%= booking.end_date %></p>
+      <p>Rating: ★★★★★</p>
+    </div>
   </div>
+  <% end %>
 </div>
-<% end %>
 
 <h1>My pending bookings</h1>
 <% @bookings_pending.each do |booking| %>
@@ -25,6 +28,8 @@
     <p>Location: <%= booking.watch.location %></p>
     <p>Price per day: $<%= booking.watch.price %></p>
     <p>Booked: <%= booking.start_date %> to <%= booking.end_date %></p>
+    <%= link_to 'Accept', accept_booking_path(booking) %>
+    <%= link_to 'Reject', reject_booking_path(booking) %>
   </div>
 </div>
 <% end %>
