@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_18_185619) do
+ActiveRecord::Schema.define(version: 2021_11_18_211418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_185619) do
     t.bigint "user_id", null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "avg_rating", default: 0
     t.index ["user_id"], name: "index_watches_on_user_id"
   end
 
