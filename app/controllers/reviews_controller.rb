@@ -1,14 +1,21 @@
 class ReviewsController < ApplicationController
   before_action :set_watch, only: [:new, :create]
 
+  # def index
+  #   @reviews = policy_scope(Review)
+  # end
+
   def new
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
+    @review.watch = @watch
     authorize(@review)
+
     if @review.save
+
       redirect_to watch_path(@review.watch)
     else
       render :new
