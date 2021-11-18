@@ -15,14 +15,20 @@ class ReviewsController < ApplicationController
     authorize(@review)
 
     if @review.save
-
-      redirect_to watch_path(@review.watch)
+      set_watch_average_rating
+      # raise
+      redirect_to watch_path(@watch)
     else
       render :new
     end
     # redirect: message to browser, new http request. whereas render: generates html and just sends html back as response.
     # re-render the new view,
     # we have non- conditional redirect
+  end
+
+  def set_watch_average_rating
+    @watch.avg_rating = @watch.reviews.map(&:rating).sum / @watch.reviews.size
+    @watch.save
   end
 
   private

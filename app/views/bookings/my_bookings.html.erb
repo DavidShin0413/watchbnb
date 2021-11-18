@@ -7,8 +7,8 @@
     <a class="price btn btn-sm">$<%= booking.watch.price %>/day</a>
     <img src="<%= booking.watch.img_url %>" />
     <div class="card-product-infos">
-      <h2><%= booking.watch.name %></h2>
-      <p id="rating">(★★★★★)</p>
+      <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
+      <p id="rating"><%= booking.watch.avg_rating %></p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
