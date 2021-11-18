@@ -24,4 +24,8 @@ class WatchPolicy < ApplicationPolicy
   def owner?
     record.user == user
   end
+
+  def my_watches?
+    true
+  end
 end
