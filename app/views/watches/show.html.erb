@@ -1,3 +1,4 @@
+<input type="button" value="Back" onclick="history.back(-1)" />
 <p id="notice"><%= notice %></p>
 
 <div class="container-watchshow">
@@ -15,8 +16,8 @@
     <p> Reviews:
       <ul><% @watch.reviews.each do |review| %>
         <li>
-          comment: <%= review.comment%>
-          rating: <%= review.rating%>
+          comment: <%= review.comment %>
+          rating: <%= review.rating %>
         </li>
         <%end%>
       </ul>
@@ -43,5 +44,3 @@
   </div>
 
 </div>
-
-<p><%= link_to 'Back', watches_path %></p>

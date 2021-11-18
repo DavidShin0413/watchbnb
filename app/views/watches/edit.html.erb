@@ -1,4 +1,4 @@
+<input type="button" value="Back" onclick="history.back(-1)" />
 <h1>Edit <%= @watch.name %></h1>
 <%= render "form" %>
 <p><%= link_to "Show", watches_path %></p>
-<p><%= link_to "Back", watch_path(@watch) %></p>
