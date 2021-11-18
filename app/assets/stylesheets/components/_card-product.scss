@@ -1,11 +1,71 @@
+.header-stretch {
+  padding: 5px 15px;
+  margin-top: 20px;
+  border-top: 4px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+  background-color: $main2;
+  color: white;
+}
+
 .card-container{
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
 }
 
-.btn{
+.card-container .btn {
   outline: rgba(0, 0, 0, 0.5) 1px solid;
+  border-radius: 5px;
+}
+
+a{
+  color: $main2;
+}
+
+.card-product {
+  position: relative;
+  height: 225px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  width: 500px;
+  display: flex;
+  margin: 10px 10px;
+  outline: rgba(0, 0, 0, 0.5) 1px solid;
+  border-radius: 5px;
+}
+
+.card-product img {
+  height: 90%;
+  width: 120px;
+  object-fit: cover;
+  margin: 0 5px 0 10px;
+}
+
+.card-product h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .8;
+  margin-bottom: 0;
+  margin-top: 7px;
+}
+
+#rating {
+  margin: 0;
+  opacity: 1;
+  font-size: 16px;
+  color: black;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
 }
 
 #review{
@@ -20,53 +80,7 @@
   font-size: 1.0rem;
   font-weight: bold;
   margin: 0;
-  background-color: gray;
+  background-color: $main2;
   padding: 8px;
   border-radius: 5px;
-}
-
-.card-product {
-  position: relative;
-  height: 220px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  width: 420px;
-  display: flex;
-  margin: 10px 10px;
-  outline: rgba(0, 0, 0, 0.5) 1px solid;
-  border-radius: 5px;
-}
-
-.card-product img {
-  height: 90%;
-  width: 120px;
-  object-fit: cover;
-  margin: 0 5px;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-#rating {
-  margin: 0;
-  opacity: 1;
-  font-size: 16px;
-  color: black;
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
 }

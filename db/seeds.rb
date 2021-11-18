@@ -22,12 +22,12 @@ booking2 = Booking.create(user_id: bob.id, watch_id: omega.id, start_date: (Date
 booking3 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: (Date.current + 5), end_date: (Date.current + 6), status: 0)
 booking4 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: (Date.current + 7), end_date: (Date.current + 8), status: 0)
 booking5 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: (Date.current + 9), end_date: (Date.current + 10), status: 0)
-booking6 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: (Date.current + 11), end_date: (Date.current + 12), status: 0)
+booking6 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: (Date.current + 11), end_date: (Date.current + 12), status: 1)
 booking7 = Booking.create(user_id: alex.id, watch_id: iwc.id, start_date: (Date.current + 13), end_date: (Date.current + 14), status: 0)
 booking8 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 15), end_date: (Date.current + 16), status: 1)
 booking9 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 17), end_date: (Date.current + 18), status: 1)
 booking10 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 19), end_date: (Date.current + 20), status: 1)
 booking11 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 21), end_date: (Date.current + 22), status: 1)
-booking12 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 23), end_date: (Date.current + 24), status: 1)
+booking12 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 23), end_date: (Date.current + 24), status: 2)
 
 puts "Done seeding!"
