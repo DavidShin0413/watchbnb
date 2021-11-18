@@ -1,45 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<div class="d-flex flex-column align-items-center">
-  <div>
-    <img src="<%= @watch.img_url %>" width=400>
+<div class="container-watchshow">
+  <div class="watch-image">
+    <img src="<%= @watch.img_url %>" width=400 height=400>
   </div>
 
+  <div class="d-flex flex-column align-items-center">
+    <h2><%= @watch.name %></h2>
+    <p class="mt-3"> Owner: <%= @watch.user.name %> </p>
+    <p> Style: <%= @watch.style %> </p>
+    <p> Location: <%= @watch.location %> </p>
+    <p> Price per day: $<%= @watch.price %> </p>
+    <%# <img href="<% @watch.img_url"/> %>
+    <p> Reviews:
+      <ul><% @watch.reviews.each do |review| %>
+        <li>
+          comment: <%= review.comment%>
+          rating: <%= review.rating%>
+        </li>
+        <%end%>
+      </ul>
+    </p>
 
-<p> Name: <%= @watch.name %> </p>
-<p> Owner: <%= @watch.user.name %> </p>
-<p> Style: <%= @watch.style %> </p>
-<p> Location: <%= @watch.location %> </p>
-<p> Price per day: $<%= @watch.price %> </p>
-<%# <img href="<% @watch.img_url"/> %>
-<p> Reviews:
-  <ul><% @watch.reviews.each do |review| %>
-    <li>
-      comment: <%= review.comment%>
-      rating: <%= review.rating%>
-    </li>
-    <%end%>
-  </ul>
-</p>
+    <% if policy(@watch).edit? %>
+    <p><%= link_to 'Edit', edit_watch_path(@watch) %></p>
+    <% end %>
 
-<% if policy(@watch).edit? %>
-<p><%= link_to 'Edit', edit_watch_path(@watch) %></p>
-<% end %>
+    <% unless policy(@watch).owner? %>
+      <%# don't forget to update watches_path %>
+      <p><%= link_to "Rent Now", new_watch_booking_path(@watch), class: "btn btn-danger mt-3" %></p>
+    <% end %>
 
-<% unless policy(@watch).owner? %>
-  <%# don't forget to update watches_path %>
-  <p><%= link_to "Rent Now", new_watch_booking_path(@watch), class: "btn btn-danger" %></p>
-<% end %>
+    <% if policy(@watch).destroy? %>
+      <p><%= link_to 'Delete', watch_path(@watch), method: :delete %></p>
+    <% end %>
+  </div>
 
-<% if policy(@watch).destroy? %>
-  <p><%= link_to 'Delete', watch_path(@watch), method: :delete %></p>
-<% end %>
+  <div id="map"
+    style="width: 400px; height: 400px;"
+    data-marker="<%= @marker.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
-<p><%= link_to 'Back', watches_path %></p>
 </div>
 
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-marker="<%= @marker.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<p><%= link_to 'Back', watches_path %></p>

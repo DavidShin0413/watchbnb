@@ -17,4 +17,10 @@ class Watch < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  def unavailable_dates
+    bookings.pluck(:start_date, :end_date).map do |range|
+      { from: range.first, to: range.last }
+    end
+  end
+
 end
