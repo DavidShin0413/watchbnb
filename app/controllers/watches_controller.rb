@@ -45,11 +45,6 @@ class WatchesController < ApplicationController
     redirect_to watches_path
   end
 
-  def my_watches
-    @my_watches = Watch.where(user: current_user)
-    authorize(@my_watches)
-  end
-
   private
 
   def set_watch
