@@ -1,10 +1,8 @@
-
-<h1>My accepted bookings</h1>
-
+<h1 class="header-stretch">My accepted bookings</h1>
 <div class="card-container">
   <% @bookings_accepted.each do |booking| %>
   <div class="card-product">
-    <a class="price btn btn-sm">$<%= booking.watch.price %>/day</a>
+    <p id="price">$<%= booking.watch.price %>/day</p>
     <img src="<%= booking.watch.img_url %>" />
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
@@ -13,47 +11,45 @@
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
       <p>Booked: <%= booking.start_date %> to <%= booking.end_date %></p>
-    <% unless policy(booking.watch).owner? %>
-      <p><%= link_to "Review this watch", new_watch_review_path(booking.watch), class: "btn btn-danger" %></p>
-    <% end %>
+      <% unless policy(booking.watch).owner? %>
+        <p id="review"><%= link_to "Review this watch", new_watch_review_path(booking.watch), class: "btn btn-light btn-sm" %></p>
+      <% end %>
     </div>
   </div>
   <% end %>
 </div>
 
-<h1>My pending bookings</h1>
+<h1 class="header-stretch">My pending bookings</h1>
 <div class="card-container">
   <% @bookings_pending.each do |booking| %>
   <div class="card-product">
+    <p id="price">$<%= booking.watch.price %>/day</p>
     <img src="<%= booking.watch.img_url %>" />
     <div class="card-product-infos">
-      <h2><%= booking.watch.name %></h2>
+      <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
       <p id="rating">(★★★★★)</p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
-      <p>Price per day: $<%= booking.watch.price %></p>
-      <p>Booked: <%= booking.start_date %> to <%= booking.end_date %></p>
-      <%= link_to 'Accept', accept_booking_path(booking), class: "btn btn-secondary btn-sm" %>
-      <%= link_to 'Reject', reject_booking_path(booking), class: "btn btn-warning btn-sm" %>
+      <p>Requested: <%= booking.start_date %> to <%= booking.end_date %></p>
     </div>
   </div>
   <% end %>
 </div>
 
-<h1>My rejected bookings</h1>
+<h1 class="header-stretch">My rejected bookings</h1>
 <div class="card-container">
   <% @bookings_rejected.each do |booking| %>
   <div class="card-product">
+    <p id="price">$<%= booking.watch.price %>/day</p>
     <img src="<%= booking.watch.img_url %>" />
     <div class="card-product-infos">
-      <h2><%= booking.watch.name %></h2>
+      <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
       <p id="rating">(★★★★★)</p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
-      <p>Price per day: $<%= booking.watch.price %></p>
-      <p>Booked: <%= booking.start_date %> to <%= booking.end_date %></p>
+      <p>Requested: <%= booking.start_date %> to <%= booking.end_date %></p>
     </div>
   </div>
   <% end %>
