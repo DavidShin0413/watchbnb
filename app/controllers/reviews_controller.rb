@@ -7,8 +7,8 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.watch = @watch
-    if @review.save == true
+    authorize(@review)
+    if @review.save
       redirect_to watch_path(@review.watch)
     else
       render :new
