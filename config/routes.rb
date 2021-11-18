@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   get "/my_bookings", to: "bookings#my_bookings"
   get "/my_watches_bookings", to: "bookings#my_watches_bookings"
-  patch "/confirm_booking/:id", to: "bookings#confirm_booking"
+  get "/accept_booking/:id", to: "bookings#accept", as: :accept_booking
+  get "/reject_booking/:id", to: "bookings#reject", as: :reject_booking
 end

@@ -5,10 +5,10 @@
 </div>
 
 <p> Name: <%= @watch.name %> </p>
-<p> User: <%= @watch.user_id %> </p>
-<p> style: <%= @watch.style %> </p>
-<p> location: <%= @watch.location %> </p>
-<p> price: <%= @watch.price %> </p>
+<p> Owner: <%= @watch.user.name %> </p>
+<p> Style: <%= @watch.style %> </p>
+<p> Location: <%= @watch.location %> </p>
+<p> Price per day: $<%= @watch.price %> </p>
 <img href="<% @watch.img_url %>"/>
 
 <% if policy(@watch).edit? %>

@@ -17,10 +17,10 @@ iwc = Watch.create(user_id: charlie.id, name: "IWC", style: "Pilot", location: "
 ap = Watch.create(user_id: charlie.id, name: "Audemars Piguet", style: "Dress", location: "New York", price: 100, img_url: "https://gothelist.com/media/catalog/product/cache/image/e9c3970ab036de70892d86c6d221abfe/imp/ort/content-media-product-sources-bbe5a499-949d-42d8-86e2-155bfe039737.jpg")
 
 puts "Creating bookings..."
-booking1 = Booking.create(user_id: bob.id, watch_id: rolex.id, start_date: Date.current, end_date: (Date.current + 1), accepted: true)
-booking2 = Booking.create(user_id: bob.id, watch_id: omega.id, start_date: Date.current, end_date: (Date.current + 1), accepted: true)
-booking3 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: Date.current, end_date: (Date.current + 1), accepted: false)
-booking5 = Booking.create(user_id: alex.id, watch_id: iwc.id, start_date: Date.current, end_date: (Date.current + 1), accepted: true)
-booking6 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: Date.current, end_date: (Date.current + 1), accepted: false)
+booking1 = Booking.create(user_id: bob.id, watch_id: rolex.id, start_date: Date.current, end_date: (Date.current + 1), status: 0)
+booking2 = Booking.create(user_id: bob.id, watch_id: omega.id, start_date: Date.current, end_date: (Date.current + 1), status: 0)
+booking3 = Booking.create(user_id: bob.id, watch_id: casio.id, start_date: Date.current, end_date: (Date.current + 1), status: 0)
+booking4 = Booking.create(user_id: alex.id, watch_id: iwc.id, start_date: Date.current, end_date: (Date.current + 1), status: 0)
+booking5 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: Date.current, end_date: (Date.current + 1), status: 1)
 
 puts "Done seeding!"

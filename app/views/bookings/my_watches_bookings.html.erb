@@ -1,9 +1,9 @@
 <h1>My accepted bookings</h1>
-<% @my_watches_bookings_booked.each do |booking|%>
+<% @my_watches_bookings_accepted.each do |booking|%>
   <ul>
     <li><img src="<%= booking.watch.img_url %>"/></li>
-    <li>Watch name: <%=booking.watch.name%></li>
-    <li>Booked by: <%=booking.watch.user.name%></li>
+    <li><%= link_to 'Watch name: ', watch_path(booking.watch) %><%=booking.watch.name%></li>
+    <li>Booked by: <%=booking.user.name%></li>
     <li>Watch style: <%=booking.watch.style%></li>
     <li>Location: <%=booking.watch.location%></li>
     <li>Price per day: $<%=booking.watch.price%></li>
@@ -15,14 +15,14 @@
 <% @my_watches_bookings_pending.each do |booking|%>
   <ul>
     <li><img src="<%= booking.watch.img_url %>"/></li>
-    <li>Watch name: <%=booking.watch.name%></li>
-    <li>Booked by: <%=booking.watch.user.name%></li>
+    <li><%= link_to 'Watch name: ', watch_path(booking.watch) %><%=booking.watch.name%></li>
+    <li>Requested by: <%=booking.user.name%></li>
     <li>Watch style: <%=booking.watch.style%></li>
     <li>Location: <%=booking.watch.location%></li>
     <li>Price per day: $<%=booking.watch.price%></li>
     <li>Booked: <%=booking.start_date%> to <%=booking.end_date%></li>
-    <%= link_to 'Confirm', my_watches_bookings_path %>
-    <%= link_to 'Reject', my_watches_bookings_path %>
+    <%= link_to 'Accept', accept_booking_path(booking) %>
+    <%= link_to 'Reject', reject_booking_path(booking) %>
   </ul>
 <% end %>
 
@@ -30,8 +30,7 @@
 <% @remaining_watches.each do |watch|%>
   <ul>
     <li><img src="<%= watch.img_url %>"/></li>
-    <li>Watch name: <%=watch.name%></li>
-    <li>Booked by: <%=watch.user.name%></li>
+    <li><%= link_to 'Watch name: ', watch_path(watch) %><%=watch.name%></li>
     <li>Watch style: <%=watch.style%></li>
     <li>Location: <%=watch.location%></li>
     <li>Price per day: $<%=watch.price%></li>
