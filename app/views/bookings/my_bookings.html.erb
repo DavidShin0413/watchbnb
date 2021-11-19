@@ -10,7 +10,19 @@
     <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
-      <p id="rating"><%= booking.watch.avg_rating %></p>
+      <p id="rating">
+        <% if booking.watch.avg_rating == 1%>
+          ★
+        <% elsif booking.watch.avg_rating == 2%>
+          ★★
+        <% elsif booking.watch.avg_rating == 3%>
+          ★★★
+        <% elsif booking.watch.avg_rating == 4%>
+          ★★★★
+        <% elsif booking.watch.avg_rating == 5%>
+          ★★★★★
+        <% end%>
+      </p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
@@ -35,7 +47,19 @@
     <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
-      <p id="rating"><%= booking.watch.avg_rating %></p>
+      <p id="rating">
+        <% if booking.watch.avg_rating == 1%>
+          ★
+        <% elsif booking.watch.avg_rating == 2%>
+          ★★
+        <% elsif booking.watch.avg_rating == 3%>
+          ★★★
+        <% elsif booking.watch.avg_rating == 4%>
+          ★★★★
+        <% elsif booking.watch.avg_rating == 5%>
+          ★★★★★
+        <% end%>
+      </p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
@@ -57,7 +81,19 @@
     <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
-      <p id="rating"><%= booking.watch.avg_rating %></p>
+      <p id="rating">
+        <% if booking.watch.avg_rating == 1%>
+          ★
+        <% elsif booking.watch.avg_rating == 2%>
+          ★★
+        <% elsif booking.watch.avg_rating == 3%>
+          ★★★
+        <% elsif booking.watch.avg_rating == 4%>
+          ★★★★
+        <% elsif booking.watch.avg_rating == 5%>
+          ★★★★★
+        <% end%>
+      </p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
