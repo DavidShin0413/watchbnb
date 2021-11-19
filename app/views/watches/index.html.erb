@@ -9,13 +9,15 @@
     %>
     <%= submit_tag "Search", class: "btn btn-primary btn-lg search-box" %>
   </div>
-  <%= link_to "List New Watch", new_watch_path, class: "btn btn-secondary btn-lg list-watch" %>
+  <div class="list-watch-button">
+    <%= link_to "List New Watch", new_watch_path, class: "btn btn-secondary btn-lg list-watch mt-40" %>
+  </div>
   <% end %>
 </div>
 <div class="d-flex justify-content-center">
 </div>
 
-<h1 class="header-stretch"> Local listings: </h1>
+<h1 class="header-stretch text-center"> Local listings </h1>
 
 <div class="card-container">
   <% @watches.each do |watch| %>
@@ -28,7 +30,19 @@
     <% end %>
     <div class="card-product-infos">
       <h2><%= link_to watch.name, watch_path(watch) %></h2>
-      <p id="rating"><%= watch.avg_rating %></p>
+      <p id="rating">
+        <% if watch.avg_rating == 1%>
+          ★
+        <% elsif watch.avg_rating == 2%>
+          ★★
+        <% elsif watch.avg_rating == 3%>
+          ★★★
+        <% elsif watch.avg_rating == 4%>
+          ★★★★
+        <% elsif watch.avg_rating == 5%>
+          ★★★★★
+        <% end%>
+      </p>
       <p>Owner:
         <% if watch.user == current_user  %>
           <b><i><%= "You" %></i></b>

@@ -1,4 +1,4 @@
-<h1 class="header-stretch">My accepted bookings</h1>
+<h1 class="header-stretch text-center">My accepted bookings</h1>
 <div class="card-container">
   <% @bookings_accepted.each do |booking| %>
   <div class="card-product">
@@ -10,7 +10,19 @@
     <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
-      <p id="rating"><%= booking.watch.avg_rating %></p>
+      <p id="rating">
+        <% if booking.watch.avg_rating == 1%>
+          ★
+        <% elsif booking.watch.avg_rating == 2%>
+          ★★
+        <% elsif booking.watch.avg_rating == 3%>
+          ★★★
+        <% elsif booking.watch.avg_rating == 4%>
+          ★★★★
+        <% elsif booking.watch.avg_rating == 5%>
+          ★★★★★
+        <% end%>
+      </p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
@@ -23,7 +35,7 @@
   <% end %>
 </div>
 
-<h1 class="header-stretch">My pending bookings</h1>
+<h1 class="header-stretch text-center">My pending bookings</h1>
 <div class="card-container">
   <% @bookings_pending.each do |booking| %>
   <div class="card-product">
@@ -35,7 +47,19 @@
     <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
-      <p id="rating"><%= booking.watch.avg_rating %></p>
+      <p id="rating">
+        <% if booking.watch.avg_rating == 1%>
+          ★
+        <% elsif booking.watch.avg_rating == 2%>
+          ★★
+        <% elsif booking.watch.avg_rating == 3%>
+          ★★★
+        <% elsif booking.watch.avg_rating == 4%>
+          ★★★★
+        <% elsif booking.watch.avg_rating == 5%>
+          ★★★★★
+        <% end%>
+      </p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
@@ -45,7 +69,7 @@
   <% end %>
 </div>
 
-<h1 class="header-stretch">My rejected bookings</h1>
+<h1 class="header-stretch text-center">My rejected bookings</h1>
 <div class="card-container my-rejected-bookings-container">
   <% @bookings_rejected.each do |booking| %>
   <div class="card-product">
@@ -57,7 +81,19 @@
     <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
-      <p id="rating"><%= booking.watch.avg_rating %></p>
+      <p id="rating">
+        <% if booking.watch.avg_rating == 1%>
+          ★
+        <% elsif booking.watch.avg_rating == 2%>
+          ★★
+        <% elsif booking.watch.avg_rating == 3%>
+          ★★★
+        <% elsif booking.watch.avg_rating == 4%>
+          ★★★★
+        <% elsif booking.watch.avg_rating == 5%>
+          ★★★★★
+        <% end%>
+      </p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
