@@ -24,7 +24,7 @@
     <img src="<%= watch.img_url %>" />
     <div class="card-product-infos">
       <h2><%= link_to watch.name, watch_path(watch) %></h2>
-      <p id="rating">(★★★★★)</p>
+      <p id="rating"><%= watch.avg_rating %></p>
       <p>Watch style: <%= watch.style %></p>
       <p>Location: <%= watch.location %></p>
     </div>
