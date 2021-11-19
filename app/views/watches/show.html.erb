@@ -1,3 +1,5 @@
+<h1 class="header-stretch"> Watch overview </h1>
+
 <p id="notice"><%= notice %></p>
 
 <div class="container-watchshow">
@@ -7,7 +9,13 @@
 
   <div class="d-flex flex-column align-items-center">
     <h2><%= @watch.name %></h2>
-    <p class="mt-3"> Owner: <%= @watch.user.name %> </p>
+    <p class="mt-3"> Owner:
+      <% if @watch.user == current_user  %>
+        <b><i><%= "You" %></i></b>
+      <% else %>
+        <%= @watch.user.name %>
+      <% end %>
+    </p>
     <p> Style: <%= @watch.style %> </p>
     <p> Location: <%= @watch.location %> </p>
     <p> Price per day: $<%= @watch.price %> </p>
@@ -43,5 +51,3 @@
   </div>
 
 </div>
-
-<p><%= link_to 'Back', watches_path %></p>
