@@ -1,20 +1,22 @@
 <%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://qph.fs.quoracdn.net/main-qimg-ff3264c29718171aa6ac08bd429f4643-c"> %>
 <div class="home-video-wrapper">
   <%= video_tag "video.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
-  <h1 class="homepage-h1">WatchBnB</h1>
-  <div class="container">
-    <div>
-      <p>Can't afford to buy a nice watch?</p>
-      <p>RENT one now!</p>
-      <div class="button-container">
-        <%= link_to "Rent now", watches_path, class: "btn btn-danger" %>
+  <div class="homepage-content">
+    <h1 class="homepage-h1">WatchBnB</h1>
+    <div class="container call-to-action">
+      <div class="single-call-to-action">
+        <p>Can't afford to buy a nice watch?</p>
+        <p>RENT one now!</p>
+        <div class="button-container">
+          <%= link_to "Rent now", watches_path, class: "btn btn-danger" %>
+        </div>
       </div>
-    </div>
-    <div>
-      <p>Got watches and want money?</p>
-      <p>LIST yours now!</p>
-      <div class="button-container">
-        <%= link_to "List now", new_watch_path, class: "btn btn-danger" %>
+      <div class="single-call-to-action">
+        <p>Got watches and want money?</p>
+        <p>LIST yours now!</p>
+        <div class="button-container">
+          <%= link_to "List now", new_watch_path, class: "btn btn-success" %>
+        </div>
       </div>
     </div>
   </div>
