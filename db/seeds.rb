@@ -30,7 +30,7 @@ booking10 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.
 booking11 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 21), end_date: (Date.current + 22), status: 1)
 booking12 = Booking.create(user_id: alex.id, watch_id: ap.id, start_date: (Date.current + 23), end_date: (Date.current + 24), status: 2)
 
-puts "Reviews..."
+puts "Creating reviews..."
 seed1 = Review.create(comment: "What an amazing watch! I had a great time wearing it.", rating: 5, watch_id: omega.id)
 seed2 = Review.create(comment: "Pretty sweet watch.", rating: 4, watch_id: omega.id)
 seed3 = Review.create(comment: "Decent, but not great.", rating: 3, watch_id: omega.id)
