@@ -44,23 +44,25 @@ class BookingsController < ApplicationController
     @my_watches_bookings_accepted = []
     @my_watches_bookings_rejected = []
     @my_watches_bookings_pending = []
-    watches.each do |watch|
-      watch_bookings = watch.bookings.to_a.flatten
-      watch_bookings.each do |watch_booking|
-        authorize(watch_booking)
-        if watch_booking.accepted?
-          @my_watches_bookings_accepted << watch_booking
-        elsif watch_booking.rejected?
-          @my_watches_bookings_rejected << watch_booking
-        else
-          @my_watches_bookings_pending << watch_booking
+    unless watches.empty?
+      watches.each do |watch|
+        watch_bookings = watch.bookings.to_a.flatten
+        watch_bookings.each do |watch_booking|
+          if watch_booking.accepted?
+            @my_watches_bookings_accepted << watch_booking
+          elsif watch_booking.rejected?
+            @my_watches_bookings_rejected << watch_booking
+          else
+            @my_watches_bookings_pending << watch_booking
+          end
         end
       end
+      combined_bookings = @my_watches_bookings_accepted + @my_watches_bookings_rejected + @my_watches_bookings_pending
+      combined_watches = combined_bookings.map { |booking| booking.watch }
+      @remaining_watches = []
+      watches.each { |watch| @remaining_watches << watch unless combined_watches.include?(watch) }
     end
-    combined_bookings = @my_watches_bookings_accepted + @my_watches_bookings_rejected + @my_watches_bookings_pending
-    combined_watches = combined_bookings.map { |booking| booking.watch }
-    @remaining_watches = []
-    watches.each { |watch| @remaining_watches << watch unless combined_watches.include?(watch) }
+    authorize(Booking.first)
   end
 
   private

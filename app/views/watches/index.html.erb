@@ -15,7 +15,7 @@
 <div class="d-flex justify-content-center">
 </div>
 
-<h1 class="header-stretch"> Local listings: </h1>
+<h1 class="header-stretch text-center"> Local listings </h1>
 
 <div class="card-container">
   <% @watches.each do |watch| %>
@@ -28,7 +28,26 @@
     <% end %>
     <div class="card-product-infos">
       <h2><%= link_to watch.name, watch_path(watch) %></h2>
-      <p id="rating"><%= watch.avg_rating %></p>
+      <p id="rating">
+        <% if watch.avg_rating == 1%>
+          ★
+        <% elsif watch.avg_rating == 2%>
+          ★★
+        <% elsif watch.avg_rating == 3%>
+          ★★★
+        <% elsif watch.avg_rating == 4%>
+          ★★★★
+        <% elsif watch.avg_rating == 5%>
+          ★★★★★
+        <% end%>
+      </p>
+      <p>Owner:
+        <% if watch.user == current_user  %>
+          <b><i><%= "You" %></i></b>
+        <% else %>
+          <%= watch.user.name %>
+        <% end %>
+      </p>
       <p>Watch style: <%= watch.style %></p>
       <p>Location: <%= watch.location %></p>
     </div>
