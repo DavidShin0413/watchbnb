@@ -27,7 +27,7 @@
     <img src="<%= booking.watch.img_url %>" />
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
-      <p id="rating">(★★★★★)</p>
+      <p id="rating"><%= booking.watch.avg_rating %></p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
@@ -45,7 +45,7 @@
     <img src="<%= booking.watch.img_url %>" />
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
-      <p id="rating">(★★★★★)</p>
+      <p id="rating"><%= booking.watch.avg_rating %></p>
       <p>Belongs to: <%= booking.watch.user.name %></p>
       <p>Watch style: <%= booking.watch.style %></p>
       <p>Location: <%= booking.watch.location %></p>
