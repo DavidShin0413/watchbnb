@@ -3,7 +3,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <%= f.input :name %>
-  <%= f.input :style %>
+  <%= f.input :style, label: 'Style', collection: %w[Dress Diver Pilot Field]%>
   <%= f.input :location %>
   <%= f.input :price %>
   <%= f.input :photo, as: :file %>

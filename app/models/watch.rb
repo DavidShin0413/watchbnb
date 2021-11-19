@@ -4,7 +4,7 @@ class Watch < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_one_attached :photo
 
-  validates :name, :price, :location, presence: true
+  validates :name, :price, :location, :style, presence: true
   validates :style, inclusion: { in: %w[Dress Diver Pilot Field] }
 
 
