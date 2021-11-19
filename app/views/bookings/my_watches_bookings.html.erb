@@ -1,4 +1,4 @@
-<h1 class="header-stretch">My accepted bookings</h1>
+<h1 class="header-stretch text-center">My accepted bookings</h1>
 <div class="card-container">
   <% @my_watches_bookings_accepted.each do |booking|%>
   <div class="card-product">
@@ -32,7 +32,7 @@
   <% end %>
 </div>
 
-<h1 class="header-stretch">My pending bookings</h1>
+<h1 class="header-stretch text-center">My pending bookings</h1>
 <div class="card-container">
   <% @my_watches_bookings_pending.each do |booking| %>
   <div class="card-product">
@@ -68,7 +68,7 @@
   <% end %>
 </div>
 
-<h1 class="header-stretch">My vacant listings</h1>
+<h1 class="header-stretch text-center">My vacant listings</h1>
 <div class="card-container">
   <% if @remaining_watches.nil? %>
       <p>No Watches to display</p>
