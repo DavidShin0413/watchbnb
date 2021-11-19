@@ -1,12 +1,17 @@
-<%= simple_form_for(@watch) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <%= f.input :name %>
-  <%= f.input :style, label: 'Style', collection: %w[Dress Diver Pilot Field]%>
-  <%= f.input :location %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+    <div class="simple-form">
+      <%= simple_form_for(@watch) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <%= f.input :name %>
+        <%= f.input :style, label: 'Style', collection: %w[Dress Diver Pilot Field]%>
+        <%= f.input :location %>
+        <%= f.input :price %>
+        <%= f.input :photo, as: :file %>
+       <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
