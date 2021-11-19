@@ -1,16 +1,16 @@
 <h1 class="header-stretch text-center">My accepted bookings</h1>
 <div class="card-container">
   <% @my_watches_bookings_accepted.each do |booking|%>
-  <div class="card-product">
-    <p id="price">$<%= booking.watch.price %>/day</p>
-    <% if booking.watch.img_url != nil %>
-      <img src="<%= booking.watch.img_url %>">
-    <% else %>
-      <%= cl_image_tag booking.watch.photo.key %>
-    <% end %>
-    <div class="card-product-infos">
-      <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
-      <p id="rating">
+    <div class="card-product">
+      <p id="price">$<%= booking.watch.price %>/day</p>
+      <% if booking.watch.img_url != nil %>
+        <img src="<%= booking.watch.img_url %>">
+      <% else %>
+        <%= cl_image_tag booking.watch.photo.key %>
+      <% end %>
+      <div class="card-product-infos">
+        <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
+        <p id="rating">
         <% if booking.watch.avg_rating == 1%>
           ★
         <% elsif booking.watch.avg_rating == 2%>
@@ -22,29 +22,29 @@
         <% elsif booking.watch.avg_rating == 5%>
           ★★★★★
         <% end%>
-      </p>
-      <p>Belongs to: <%= booking.watch.user.name %></p>
-      <p>Watch style: <%= booking.watch.style %></p>
-      <p>Location: <%= booking.watch.location %></p>
-      <p>Booked: <%= booking.start_date %> to <%= booking.end_date %></p>
+        </p>
+        <p>Belongs to: <%= booking.watch.user.name %></p>
+        <p>Watch style: <%= booking.watch.style %></p>
+        <p>Location: <%= booking.watch.location %></p>
+        <p>Booked: <%= booking.start_date %> to <%= booking.end_date %></p>
+      </div>
     </div>
-  </div>
   <% end %>
 </div>
 
 <h1 class="header-stretch text-center">My pending bookings</h1>
 <div class="card-container">
   <% @my_watches_bookings_pending.each do |booking| %>
-  <div class="card-product">
-    <p id="price">$<%= booking.watch.price %>/day</p>
-    <% if booking.watch.img_url != nil %>
-      <img src="<%= booking.watch.img_url %>">
-    <% else %>
-      <%= cl_image_tag booking.watch.photo.key %>
-    <% end %>
-    <div class="card-product-infos">
-      <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
-      <p id="rating">
+    <div class="card-product">
+      <p id="price">$<%= booking.watch.price %>/day</p>
+      <% if booking.watch.img_url != nil %>
+        <img src="<%= booking.watch.img_url %>">
+      <% else %>
+        <%= cl_image_tag booking.watch.photo.key %>
+      <% end %>
+      <div class="card-product-infos">
+        <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
+        <p id="rating">
         <% if booking.watch.avg_rating == 1%>
           ★
         <% elsif booking.watch.avg_rating == 2%>
@@ -56,34 +56,34 @@
         <% elsif booking.watch.avg_rating == 5%>
           ★★★★★
         <% end%>
-      </p>
-      <p>Belongs to: <%= booking.watch.user.name %></p>
-      <p>Watch style: <%= booking.watch.style %></p>
-      <p>Location: <%= booking.watch.location %></p>
-      <p>Requested: <%= booking.start_date %> to <%= booking.end_date %></p>
-      <p> <%= link_to 'Accept', accept_booking_path(booking), class: "btn btn-secondary btn-sm mr-2" %>
-      <%= link_to 'Reject', reject_booking_path(booking), class: "btn btn-warning btn-sm" %></p>
+        </p>
+        <p>Belongs to: <%= booking.watch.user.name %></p>
+        <p>Watch style: <%= booking.watch.style %></p>
+        <p>Location: <%= booking.watch.location %></p>
+        <p>Requested: <%= booking.start_date %> to <%= booking.end_date %></p>
+        <p> <%= link_to 'Accept', accept_booking_path(booking), class: "btn btn-secondary btn-sm mr-2" %>
+        <%= link_to 'Reject', reject_booking_path(booking), class: "btn btn-warning btn-sm" %></p>
+      </div>
     </div>
-  </div>
   <% end %>
 </div>
 
 <h1 class="header-stretch text-center">My vacant listings</h1>
-<div class="card-container">
+<div class="card-container my-rejected-bookings-container">
   <% if @remaining_watches.nil? %>
-      <p>No Watches to display</p>
+    <p>No Watches to display</p>
   <% else %>
     <% @remaining_watches.each do |watch|%>
       <div class="card-product">
-      <p id="price">$<%= watch.price %>/day</p>
+        <p id="price">$<%= watch.price %>/day</p>
         <% if watch.img_url != nil %>
           <img src="<%= watch.img_url %>">
         <% else %>
           <%= cl_image_tag watch.photo.key %>
         <% end %>
-      <div class="card-product-infos">
-        <h2><%= link_to watch.name, watch_path(watch) %></h2>
-        <p id="rating">
+        <div class="card-product-infos">
+          <h2><%= link_to watch.name, watch_path(watch) %></h2>
+           <p id="rating">
         <% if watch.avg_rating == 1%>
           ★
         <% elsif watch.avg_rating == 2%>
@@ -95,10 +95,10 @@
         <% elsif watch.avg_rating == 5%>
           ★★★★★
         <% end%>
-      </p>
-        <p>Watch style: <%= watch.style %></p>
-        <p>Location: <%= watch.location %></p>
+        </p>
+          <p>Watch style: <%= watch.style %></p>
+          <p>Location: <%= watch.location %></p>
       </div>
-   <% end %>
+    <% end %>
   <% end %>
 </div>
