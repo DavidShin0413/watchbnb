@@ -3,7 +3,11 @@
   <% @bookings_accepted.each do |booking| %>
   <div class="card-product">
     <p id="price">$<%= booking.watch.price %>/day</p>
-    <img src="<%= booking.watch.img_url %>" />
+    <% if booking.watch.img_url != nil %>
+      <img src="<%= booking.watch.img_url %>">
+    <% else %>
+      <%= cl_image_tag booking.watch.photo.key %>
+    <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
       <p id="rating"><%= booking.watch.avg_rating %></p>
@@ -24,7 +28,11 @@
   <% @bookings_pending.each do |booking| %>
   <div class="card-product">
     <p id="price">$<%= booking.watch.price %>/day</p>
-    <img src="<%= booking.watch.img_url %>" />
+    <% if booking.watch.img_url != nil %>
+      <img src="<%= booking.watch.img_url %>">
+    <% else %>
+      <%= cl_image_tag booking.watch.photo.key %>
+    <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
       <p id="rating"><%= booking.watch.avg_rating %></p>
@@ -42,7 +50,11 @@
   <% @bookings_rejected.each do |booking| %>
   <div class="card-product">
     <p id="price">$<%= booking.watch.price %>/day</p>
-    <img src="<%= booking.watch.img_url %>" />
+    <% if booking.watch.img_url != nil %>
+      <img src="<%= booking.watch.img_url %>">
+    <% else %>
+      <%= cl_image_tag booking.watch.photo.key %>
+    <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
       <p id="rating"><%= booking.watch.avg_rating %></p>
