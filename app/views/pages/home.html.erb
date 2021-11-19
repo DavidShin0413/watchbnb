@@ -1,18 +1,24 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://qph.fs.quoracdn.net/main-qimg-ff3264c29718171aa6ac08bd429f4643-c">
-  <h1 style="margin-bottom: 32px; font-size: 80px;">WatchBnB</h1>
-  <div class="container" style="display: flex; justify-content: space-between">
-    <div style="margin-right: 100px;">
-      <p style="font-weight: bold; margin: 0;">Can't afford to buy a nice watch?</p>
-      <p style="font-weight: bold; margin: 0 0 15px 0;">RENT one now!</p>
-      <div class="button-container">
-        <%= link_to "Rent now", watches_path, class: "btn btn-danger" %>
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://qph.fs.quoracdn.net/main-qimg-ff3264c29718171aa6ac08bd429f4643-c"> %>
+<div class="home-video-wrapper">
+  <%= video_tag "video.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
+  <div class="homepage-content">
+    <h1 class="homepage-h1">WatchBnB</h1>
+    <div class="container call-to-action">
+      <div class="single-call-to-action">
+        <p>Can't afford to buy a nice watch?</p>
+        <p>RENT one now!</p>
+        <div class="button-container">
+          <%= link_to "Rent now", watches_path, class: "btn btn-danger" %>
+        </div>
       </div>
-    </div>
-    <div>
-      <p style="font-weight: bold; text-shadow: 20px; margin: 0;">Got watches and want money?</p>
-      <p style="font-weight: bold; text-shadow: 20px; margin: 0 0 15px 0;">LIST yours now!</p>
-      <div class="button-container">
-        <%= link_to "List now", new_watch_path, class: "btn btn-success" %>
+
+      <div class="single-call-to-action">
+        <p>Got watches and want money?</p>
+        <p>LIST yours now!</p>
+        <div class="button-container">
+          <%= link_to "List now", new_watch_path, class: "btn btn-success" %>
+        </div>
+
       </div>
     </div>
   </div>
