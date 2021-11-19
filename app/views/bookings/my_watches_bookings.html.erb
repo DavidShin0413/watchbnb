@@ -23,7 +23,7 @@
           ★★★★★
         <% end%>
         </p>
-        <p>Belongs to: <%= booking.watch.user.name %></p>
+        <p>Requested by: <%= booking.user.name %></p>
         <p>Watch style: <%= booking.watch.style %></p>
         <p>Location: <%= booking.watch.location %></p>
         <p>Booked: <%= booking.start_date %> to <%= booking.end_date %></p>
@@ -57,7 +57,7 @@
           ★★★★★
         <% end%>
         </p>
-        <p>Belongs to: <%= booking.watch.user.name %></p>
+        <p>Requested by: <%= booking.user.name %></p>
         <p>Watch style: <%= booking.watch.style %></p>
         <p>Location: <%= booking.watch.location %></p>
         <p>Requested: <%= booking.start_date %> to <%= booking.end_date %></p>
