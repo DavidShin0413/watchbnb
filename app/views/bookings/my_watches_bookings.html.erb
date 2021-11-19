@@ -3,7 +3,11 @@
   <% @my_watches_bookings_accepted.each do |booking|%>
   <div class="card-product">
     <p id="price">$<%= booking.watch.price %>/day</p>
-    <img src="<%= booking.watch.img_url %>" />
+    <% if booking.watch.img_url != nil %>
+      <img src="<%= booking.watch.img_url %>">
+    <% else %>
+      <%= cl_image_tag booking.watch.photo.key %>
+    <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
       <p id="rating"><%= booking.watch.avg_rating %></p>
@@ -21,7 +25,11 @@
   <% @my_watches_bookings_pending.each do |booking| %>
   <div class="card-product">
     <p id="price">$<%= booking.watch.price %>/day</p>
-    <img src="<%= booking.watch.img_url %>" />
+    <% if booking.watch.img_url != nil %>
+      <img src="<%= booking.watch.img_url %>">
+    <% else %>
+      <%= cl_image_tag booking.watch.photo.key %>
+    <% end %>
     <div class="card-product-infos">
       <h2><%= link_to booking.watch.name, watch_path(booking.watch) %></h2>
       <p id="rating"><%= booking.watch.avg_rating %></p>
@@ -38,16 +46,23 @@
 
 <h1 class="header-stretch">My vacant listings</h1>
 <div class="card-container">
-  <% @remaining_watches.each do |watch|%>
-  <div class="card-product">
-    <p id="price">$<%= watch.price %>/day</p>
-    <img src="<%= watch.img_url %>" />
-    <div class="card-product-infos">
-      <h2><%= link_to watch.name, watch_path(watch) %></h2>
-      <p id="rating"><%= watch.avg_rating %></p>
-      <p>Watch style: <%= watch.style %></p>
-      <p>Location: <%= watch.location %></p>
-    </div>
-  </div>
+  <% if @remaining_watches.nil? %>
+      <p>No Watches to display</p>
+  <% else %>
+    <% @remaining_watches.each do |watch|%>
+      <div class="card-product">
+      <p id="price">$<%= watch.price %>/day</p>
+        <% if watch.img_url != nil %>
+          <img src="<%= watch.img_url %>">
+        <% else %>
+          <%= cl_image_tag watch.photo.key %>
+        <% end %>
+      <div class="card-product-infos">
+        <h2><%= link_to watch.name, watch_path(watch) %></h2>
+        <p id="rating"><%= watch.avg_rating %></p>
+        <p>Watch style: <%= watch.style %></p>
+        <p>Location: <%= watch.location %></p>
+      </div>
+   <% end %>
   <% end %>
 </div>

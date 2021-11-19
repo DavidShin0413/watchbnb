@@ -28,6 +28,7 @@ gem 'pundit'
 
 gem 'geocoder'
 
+gem 'cloudinary', '~> 1.16.0'
 # pg_search gem. github.com/Casecommons/pg_search
 gem 'pg_search', '~> 2.3.0'
 

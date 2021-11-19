@@ -4,7 +4,11 @@
 
 <div class="container-watchshow">
   <div class="watch-image">
-    <img src="<%= @watch.img_url %>" width=400 height=400>
+    <% if @watch.img_url != nil %>
+      <img src="<%= @watch.img_url %>" width=400 height=400>
+    <% else %>
+      <%= cl_image_tag @watch.photo.key, height: 400, width: 400, crop: :fill %>
+    <% end %>
   </div>
 
   <div class="d-flex flex-column align-items-center">

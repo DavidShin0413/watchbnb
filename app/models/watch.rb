@@ -2,8 +2,9 @@ class Watch < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_one_attached :photo
 
-  validates :name, :price, :location, :img_url, presence: true
+  validates :name, :price, :location, presence: true
   validates :style, inclusion: { in: %w[Dress Diver Pilot Field] }
 
 
